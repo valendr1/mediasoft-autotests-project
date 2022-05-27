@@ -1,46 +1,96 @@
 package team.mediasoft.tests;
 
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import team.mediasoft.pages.MediaSoftPage;
 
 public class WebTests {
 
+    MediaSoftPage mediaSoftPage = new MediaSoftPage();
+    String vacancyAtHeaderName = "Вакансии";
+    String vacancy = "QA Automation Engineer";
+    String projects = "Проекты";
+    String employees = "QA-инженеры";
+    String contactsAtHeader = "контакты";
+    String city = "Санкт-Петербург";
+
+
     @Test
+    @Owner("valendr1")
+    @DisplayName("Проверка наличия вакансии QA")
     void checkVacancyQAAtPage() {
-        open("https://mediasoft.team");
-        $$("ul li").findBy(text("Вакансии")).$("a").click();
-        $("#welcome").shouldHave(text("QA Automation Engineer")).shouldBe(visible);
-        sleep(5000);
+        //Предусловия
+        mediaSoftPage.openPage();
+        //Шаги
+        mediaSoftPage.clickVacancyAtHeader(vacancyAtHeaderName);
+        //Ожидаемый результат
+        mediaSoftPage.checkAvailableVacancy(vacancy);
+
     }
 
     @Test
+    @Owner("valendr1")
+    @DisplayName("Проверка участия QA в проекте СВЯЗНОЙ ТРЭВЭЛ")
     void checkProjectAtPage() {
-        open("https://mediasoft.team");
-        $("#svyaznoytravel").click();
-        $("#svyaznoytravel").shouldHave(text("QA-инженеры")).shouldBe(visible);
-        sleep(5000);
+        //Предусловия
+        mediaSoftPage.openPage();
+        //Шаги
+        mediaSoftPage.clickProjectAtHeader(projects)
+                .chooseSvyaznoiTravelProject(employees);
+        //Ожидаемый результат
+        mediaSoftPage.verificationQAAtProject(employees);
     }
 
     @Test
-    void checkCityAtPage(){
+    @Owner("valendr1")
+    @DisplayName("Проверка наличия офиса в городе")
+    void checkCityAtPage() {
+        //Предусловия
         Configuration.browserSize = "1920x1080";
-        open("https://mediasoft.team");
-        $$("ul li").findBy(text("контакты")).$("a").click();
-        $(".footer__address").shouldHave(text("Санкт-Петербург")).shouldBe(visible).click();
-        sleep(5000);
+        mediaSoftPage.openPage();
+        //Шаги
+        mediaSoftPage.clickContactAtHeader(contactsAtHeader);
+        // Ожидаемый результат
+        mediaSoftPage.checkCityAtContacts(city);
     }
 
-    @Test
-    void checkServicesQAAtPage(){
-        open("https://mediasoft.team");
-        $$("ul li").first().$("a").click();
-        $$("ul.ability__list li").findBy(text("QA")).shouldBe(visible).click();
-        $$("ul.ability__list li").findBy(text("QA")).shouldBe(visible)
-                .$(".ability__service")
-                .shouldHave(text("Автоматизированное тестирование"));
-        sleep(5000);
+    @ParameterizedTest(name = "Проверка наличия услуги {0} во вкладке QA департамента")
+    @ValueSource(strings = {
+            "Автоматизированное тестирование",
+            "Регрессионное",
+            "Функциональное"
+    })
+    @Owner("valendr1")
+    @DisplayName("Проверка наличия услуги в QA департаменте")
+    void checkServicesQAAtPage(String servicesQA) {
+        //Предусловия
+        mediaSoftPage.openPage();
+        //Шаги
+        mediaSoftPage.clickOurServicesAtHeader()
+                .clickQADepartments();
+        //Ожидаемый результат
+        mediaSoftPage.checkServicesOfQADepartments(servicesQA);
+    }
+
+    @ParameterizedTest(name = "Проверка наличия услуги {0} во вкладке BACKEND департамента")
+    @ValueSource(strings = {
+            "Интеграция со сторонними сервисами, решениями",
+            "Рефакторинг",
+            "Работа с СУБД SQL/NoSQL"
+    })
+    @Owner("valendr1")
+    @DisplayName("Проверка наличия услуги в Backend департаменте")
+    void checkServicesBackendAtPage(String servicesBackend) {
+        //Предусловия
+        mediaSoftPage.openPage();
+        //Шаги
+        mediaSoftPage.clickOurServicesAtHeader()
+                .clickBackendDepartments();
+        //Ожидаемый результат
+        mediaSoftPage.clickBackendDepartments();
     }
 }
