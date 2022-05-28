@@ -27,9 +27,8 @@ public class WebTests extends TestBase {
     @Owner("valendr1")
     @DisplayName("Проверка наличия вакансии QA")
     void checkVacancyQAAtPage() {
-
         //Шаги
-        step("Кликаем на линк" + vacancyAtHeaderName + "в хэдере", () -> {
+        step("Кликаем на линк " + vacancyAtHeaderName + " в хэдере", () -> {
             mediaSoftPage.clickVacancyAtHeader(vacancyAtHeaderName);
         });
         //Ожидаемый результат
