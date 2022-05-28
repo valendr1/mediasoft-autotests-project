@@ -55,3 +55,9 @@ tasks.withType(Test) {
         }
     }
 }
+
+task mainTests(type: Test) {
+    useJUnitPlatform {
+        includeTags "mainTests"
+    }
+}
