@@ -3,11 +3,13 @@ package team.mediasoft.tests;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import team.mediasoft.pages.MediaSoftPage;
 
+@Tag("mainTests")
 public class WebTests extends TestBase {
 
     MediaSoftPage mediaSoftPage = new MediaSoftPage();
