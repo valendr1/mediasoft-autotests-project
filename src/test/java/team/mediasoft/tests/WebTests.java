@@ -8,7 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import team.mediasoft.pages.MediaSoftPage;
 
-public class WebTests {
+public class WebTests extends TestBase {
 
     MediaSoftPage mediaSoftPage = new MediaSoftPage();
     String vacancyAtHeaderName = "Вакансии";
