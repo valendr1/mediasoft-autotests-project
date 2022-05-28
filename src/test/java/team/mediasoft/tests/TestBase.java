@@ -6,14 +6,18 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import team.mediasoft.config.CredentialsConfig;
 import team.mediasoft.helpers.Attach;
+import team.mediasoft.pages.MediaSoftPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
+
+    static MediaSoftPage mediaSoftPage = new MediaSoftPage();
 
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     static String login = config.login();
@@ -39,6 +43,11 @@ public class TestBase {
         System.out.println(chooseBrowser);
         System.out.println(setBrowserSize);
 
+    }
+
+    @BeforeEach
+    public void openMainPage(){
+        mediaSoftPage.openPage();
     }
 
     @AfterEach
