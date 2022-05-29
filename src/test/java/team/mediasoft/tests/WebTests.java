@@ -1,14 +1,18 @@
 package team.mediasoft.tests;
 
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import team.mediasoft.pages.MediaSoftPage;
 
-public class WebTests {
+import static io.qameta.allure.Allure.step;
+
+@Tag("mainTests")
+public class WebTests extends TestBase {
 
     MediaSoftPage mediaSoftPage = new MediaSoftPage();
     String vacancyAtHeaderName = "Вакансии";
@@ -23,39 +27,49 @@ public class WebTests {
     @Owner("valendr1")
     @DisplayName("Проверка наличия вакансии QA")
     void checkVacancyQAAtPage() {
-        //Предусловия
-        mediaSoftPage.openPage();
         //Шаги
-        mediaSoftPage.clickVacancyAtHeader(vacancyAtHeaderName);
+        step("Кликаем на линк " + vacancyAtHeaderName + " в хэдере", () -> {
+            mediaSoftPage.clickVacancyAtHeader(vacancyAtHeaderName);
+        });
         //Ожидаемый результат
-        mediaSoftPage.checkAvailableVacancy(vacancy);
-
+        step("Проверяем наличие вакансии " + vacancy, () -> {
+            mediaSoftPage.checkAvailableVacancy(vacancy);
+        });
     }
 
     @Test
     @Owner("valendr1")
     @DisplayName("Проверка участия QA в проекте СВЯЗНОЙ ТРЭВЭЛ")
     void checkProjectAtPage() {
-        //Предусловия
-        mediaSoftPage.openPage();
         //Шаги
-        mediaSoftPage.clickProjectAtHeader(projects)
-                .chooseSvyaznoiTravelProject(employees);
+        step("Кликаем на линк " + projects + " в хэдере", () -> {
+            mediaSoftPage.clickProjectAtHeader(projects);
+        });
+
+        step("Выбираем проект СВЯЗНОЙ ТРЭВЭЛ", () -> {
+            mediaSoftPage.chooseSvyaznoiTravelProject(employees);
+        });
+
         //Ожидаемый результат
-        mediaSoftPage.verificationQAAtProject(employees);
+        step("Проверка пристуствия " + employees + " в проекте", () -> {
+            mediaSoftPage.verificationQAAtProject(employees);
+        });
     }
 
     @Test
     @Owner("valendr1")
     @DisplayName("Проверка наличия офиса в городе")
+    @Disabled
     void checkCityAtPage() {
-        //Предусловия
-        Configuration.browserSize = "1920x1080";
-        mediaSoftPage.openPage();
         //Шаги
-        mediaSoftPage.clickContactAtHeader(contactsAtHeader);
+        step("Кликаем на линк "+ contactsAtHeader + " в хэдере", () -> {
+            mediaSoftPage.clickContactAtHeader(contactsAtHeader);
+        });
         // Ожидаемый результат
-        mediaSoftPage.checkCityAtContacts(city);
+        step("Проверяем наличие города " + city + " в списке", () -> {
+            mediaSoftPage.checkCityAtContacts(city);
+        });
+
     }
 
     @ParameterizedTest(name = "Проверка наличия услуги {0} во вкладке QA департамента")
@@ -67,13 +81,18 @@ public class WebTests {
     @Owner("valendr1")
     @DisplayName("Проверка наличия услуги в QA департаменте")
     void checkServicesQAAtPage(String servicesQA) {
-        //Предусловия
-        mediaSoftPage.openPage();
         //Шаги
-        mediaSoftPage.clickOurServicesAtHeader()
-                .clickQADepartments();
+        step("Кликаем на линк Наши услуги в хэдере", () -> {
+            mediaSoftPage.clickOurServicesAtHeader();
+        });
+        step("Открываем вкладку отдела QA", () -> {
+            mediaSoftPage.clickQADepartments();
+        });
         //Ожидаемый результат
-        mediaSoftPage.checkServicesOfQADepartments(servicesQA);
+        step("Проверяем наличие услуги " + servicesQA + " в списке", () -> {
+            mediaSoftPage.checkServicesOfQADepartments(servicesQA);
+        });
+
     }
 
     @ParameterizedTest(name = "Проверка наличия услуги {0} во вкладке BACKEND департамента")
@@ -85,12 +104,16 @@ public class WebTests {
     @Owner("valendr1")
     @DisplayName("Проверка наличия услуги в Backend департаменте")
     void checkServicesBackendAtPage(String servicesBackend) {
-        //Предусловия
-        mediaSoftPage.openPage();
         //Шаги
-        mediaSoftPage.clickOurServicesAtHeader()
-                .clickBackendDepartments();
+        step("Кликаем на линк Наши услуги в хэдере", () -> {
+            mediaSoftPage.clickOurServicesAtHeader();
+        });
+        step("Открываем вкладку отдела Backend", () -> {
+            mediaSoftPage.clickBackendDepartments();
+        });
         //Ожидаемый результат
-        mediaSoftPage.clickBackendDepartments();
+        step("Проверяем наличие услуги " + servicesBackend + " в списке", () -> {
+            mediaSoftPage.checkServicesOfBackendDepartments(servicesBackend);
+        });
     }
 }
