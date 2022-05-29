@@ -15,7 +15,7 @@
 
 ## :computer: Технологии и инструменты
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/logo/Intelij_IDEA.svg">
+<img width="6%" title="IntelliJ IDEA" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/logo/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="images/logo/Java.svg">
 <img width="6%" title="Selenide" src="images/logo/Selenide.svg">
 <img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
@@ -49,7 +49,7 @@
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Главная страница сборки [Jenkins](https://jenkins.autotests.cloud/job/012-bublikxoxo-mediasoft-autotests/)
 <p align="center">
-<img title="Jenkins Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/jenkins.png">
+<img title="Jenkins Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/jenkins.png">
 </p>  
 
 ## :arrow_forward: Запуск из терминала
@@ -69,35 +69,35 @@ mainTests
 ## <img width="4%" title="Allure Report" src="images/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/012-bublikxoxo-mediasoft-autotests/allure/)
 - ### Главный экран отчета
 <p align="center">
-<img title="Allure Overview Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/allure_overview.png">
+<img title="Allure Overview Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/allure_overview.png">
 </p>
 
 - ### Страница с проведенными тестами
 <p align="center">
-<img title="Allure Test Page" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/allure_behaviors.png">
+<img title="Allure Test Page" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/allure_behaviors.png">
 </p>
 
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/13127/)
 <p align="center">
-<img title="Allure Test Ops Launch" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/allure_testops.png">
+<img title="Allure Test Ops Launch" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/allure_testops.png">
 </p>
 
 ## :wrench: Интеграция с Jira
 <p align="center">
-<img title="Jira Issue Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/jira.png">
+<img title="Jira Issue Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/jira.png">
 </p>
 
 ## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 <p align="center">
-<img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/tg1.png">
+<img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/tg1.png">
 </p>
 
 <p align="center">
-<img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/screens/tg2.png">
+<img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/tg2.png">
 </p>
 
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="https://github.com/valendr1/mediasoft-autotests-project/blob/infrastructure/images/gif/gif_example.gif">
+  <img title="Selenoid Video" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/gif/gif_example.gif">
 </p>
