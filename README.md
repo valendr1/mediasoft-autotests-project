@@ -8,10 +8,10 @@
 - <a href="#electric_plug-сборка-в-Jenkins">Сборка в Jenkins</a>
 - <a href="#arrow_forward-запуск-из-терминала">Запуск из терминала</a>
 - <a href="#open_book-allure-отчет">Allure отчет</a>
-- <a href="#hammer-allure-test-ops-отчет">Allure Test Ops отчет</a>
+- <a href="#hammer-allure-testops-отчет">Allure TestOps отчет</a>
 - <a href="#wrench-интеграция-с-jira">Интеграция с Jira</a>
 - <a href="#robot-отчет-в-telegram">Отчет в Telegram</a>
-- <a href="#film_projector-видео-примеры-прохождения-тестов">Видео примеры прохождения тестов</a>
+- <a href="#film_projector-видеопример-прохождения-тестов">Видеопример прохождения тестов</a>
 
 ## :computer: Технологии и инструменты
 <p align="center">
@@ -47,10 +47,13 @@
 > 
 > После завершения прогона отправляются уведомления с помощью бота в <code>Telegram</code>.
 
+
+## :electric_plug: Сборка в Jenkins
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Главная страница сборки [Jenkins](https://jenkins.autotests.cloud/job/012-bublikxoxo-mediasoft-autotests/)
 <p align="center">
 <img title="Jenkins Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/jenkins.png">
 </p>  
+
 
 ## :arrow_forward: Запуск из терминала
 Локальный запуск:
@@ -65,7 +68,7 @@ mainTests
 "-DchooseBrowser=${BROWSER}"
 "-DsetBrowserSize=${BROWSERSIZE}"
 ```
-
+## :open_book: Allure отчет
 ## <img width="4%" title="Allure Report" src="images/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/012-bublikxoxo-mediasoft-autotests/allure/)
 - ### Главный экран отчета
 <p align="center">
@@ -77,6 +80,7 @@ mainTests
 <img title="Allure Test Page" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/allure_behaviors.png">
 </p>
 
+## :hammer: Allure TestOps отчет
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/13127/)
 <p align="center">
 <img title="Allure Test Ops Launch" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/allure_testops.png">
@@ -87,6 +91,7 @@ mainTests
 <img title="Jira Issue Dashboard" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/jira.png">
 </p>
 
+## :robot: Отчет в Telegram
 ## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 <p align="center">
 <img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/tg1.png">
@@ -96,6 +101,7 @@ mainTests
 <img title="Telegram notification message" src="https://github.com/valendr1/mediasoft-autotests-project/blob/master/images/screens/tg2.png">
 </p>
 
+## :film_projector: Видеопример прохождения тестов
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
